@@ -17,3 +17,11 @@ def view_contacts():
     else:
         for i, contact in enumerate(phonebook, start=1):
             print(f"{i}. {contact['name']} - {contact['phone']}")
+
+def search_contact():
+    name = input("Nhập tên cần tìm: ")
+    for contact in phonebook:
+        if contact['name'].lower() == name.lower():
+            print(f"SĐT của {name}: {contact['phone']}")
+            return
+    print("Không tìm thấy.")
